@@ -12,7 +12,7 @@ class BookList extends Component {
     }
 
     filteredBooks = () => {
-        return this.props.books.filter(book => book.title.includes(this.state.searchQuery))
+        return this.props.books.filter(book => book.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
     }
 
     render() {
