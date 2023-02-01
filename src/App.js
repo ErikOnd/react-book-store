@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <MyNav></MyNav>
-      <Container>
+      <Container className='p-0'>
         <Welcome></Welcome>
         <AllTheBooks></AllTheBooks>
       </Container>

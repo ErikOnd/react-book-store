@@ -24,80 +24,72 @@ class AllTheBooks extends Component {
 
                 <Row className='mt-3'>
                     <Col className='mr-3'>
-                        <Row>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Closed_Book_Icon.svg/512px-Closed_Book_Icon.svg.png?20170605011735"
-                                className='img-fluid category'
-                                alt=""
+                        <Row className='justify-content-center'>
+                            <p className='category'
                                 onClick={() => {
                                     this.setState({
                                         category: fantasyBooks
                                     })
                                 }}
-                            />
+                            >📚</p>
                         </Row>
                         <Row className='justify-content-center'>
                             <h2>Fanatsy</h2>
                         </Row>
                     </Col>
                     <Col className='mr-3'>
-                        <Row>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Closed_Book_Icon.svg/512px-Closed_Book_Icon.svg.png?20170605011735"
-                                className='img-fluid category'
-                                alt=""
+                        <Row className='justify-content-center'>
+                            <p className='category'
                                 onClick={() => {
                                     this.setState({
                                         category: historyBooks
                                     })
                                 }}
-                            />
+                            >📚</p>
                         </Row>
                         <Row className='justify-content-center'>
                             <h2>History</h2>
                         </Row>
                     </Col>
                     <Col className='mr-3'>
-                        <Row>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Closed_Book_Icon.svg/512px-Closed_Book_Icon.svg.png?20170605011735"
-                                className='img-fluid category'
-                                alt=""
+                        <Row className='justify-content-center'>
+                            <p className='category'
                                 onClick={() => {
                                     this.setState({
                                         category: horrorBooks
                                     })
                                 }}
-                            />
+                            >📚</p>
                         </Row>
                         <Row className='justify-content-center'>
                             <h2>Horror</h2>
                         </Row>
                     </Col>
                     <Col className='mr-3'>
-                        <Row>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Closed_Book_Icon.svg/512px-Closed_Book_Icon.svg.png?20170605011735"
-                                className='img-fluid category'
-                                alt=""
+                        <Row className='justify-content-center'>
+                            <p
+                                className='category'
                                 onClick={() => {
                                     this.setState({
                                         category: romanceBooks
                                     })
                                 }}
-                            />
+                            >📚</p>
                         </Row>
                         <Row className='justify-content-center'>
                             <h2>Romace</h2>
                         </Row>
                     </Col>
                     <Col className='mr-3'>
-                        <Row>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Closed_Book_Icon.svg/512px-Closed_Book_Icon.svg.png?20170605011735"
-                                className='img-fluid category'
-                                alt=""
+                        <Row className='justify-content-center'>
+                            <p
+                                className='category'
                                 onClick={() => {
                                     this.setState({
                                         category: scifiBooks
                                     })
                                 }}
-                            />
+                            >📚</p>
                         </Row>
                         <Row className='justify-content-center'>
                             <h2>Scifi</h2>
