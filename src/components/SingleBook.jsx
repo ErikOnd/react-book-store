@@ -10,13 +10,13 @@ class SingleBook extends Component {
 
     render() {
         return (
-            <Col key={this.props.book.asin} onClick={() => {
+            <Col className='mb-4' key={this.props.book.asin} onClick={() => {
                 this.state.selected === false ? this.setState({ selected: true }) : this.setState({ selected: false })
                 console.log(this.state.selected)
             }}>
                 <Card>
-                    <Card.Img variant="top" src={this.props.book.img} />
-                    <Card.Body className={this.state.selected && 'cardBorder'}>
+                    <Card.Img variant="top" className='card-img' src={this.props.book.img} />
+                    <Card.Body className={this.state.selected && 'card-selected'}>
                         <Card.Title>{this.props.book.title}</Card.Title>
                     </Card.Body>
                 </Card>

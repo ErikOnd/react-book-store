@@ -91,6 +91,15 @@ h3 {
   }
 }
 
-.cardBorder {
-  background-color: green
+.card-body {
+  height: 100px;
+}
+
+.card-img {
+  height: 500px;
+
+}
+
+.card-selected {
+  background-color: green;
 }
