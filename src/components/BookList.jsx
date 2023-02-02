@@ -40,7 +40,7 @@ class BookList extends Component {
                 </InputGroup>
                 <Row xs={1} sm={2} md={3} className="g-4">
                     {this.filteredBooks().map((book) => (
-                        <SingleBook book={book}></SingleBook>
+                        <SingleBook book={book} key={book.asin}></SingleBook>
                     ))}
                 </Row>
             </div >

@@ -10,7 +10,7 @@ class SingleBook extends Component {
 
     render() {
         return (
-            <Col className='mb-4' key={this.props.book.asin} onClick={() => {
+            <Col className='mb-4' onClick={() => {
                 this.state.selected === false ? this.setState({ selected: true }) : this.setState({ selected: false })
                 console.log(this.state.selected)
             }}>
