@@ -4,6 +4,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import AddComment from "./AddComment";
 import Button from 'react-bootstrap/Button';
 import { format, parseISO } from "date-fns";
+import Spinner from 'react-bootstrap/Spinner';
+import ErrorComponent from "./ErrorComponent";
 
 
 
@@ -12,23 +14,31 @@ class CommentArea extends Component {
 
 
     state = {
-        comments: []
+        comments: [],
+        isLoading: true,
+        error: false,
     }
 
 
     fetchComments = async () => {
         try {
-            let response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${this.props.bookAsin}`, {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/commentts/${this.props.bookAsin}`, {
                 headers: {
                     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5NDNmM2U3MzczODAwMTUzNzQzYjkiLCJpYXQiOjE2NzUzNDMwOTcsImV4cCI6MTY3NjU1MjY5N30._c0I4sL8mFtF5NXSQHQAHBF60mAfVFc4FUVYr7nBI8g"
                 }
             })
             let userComments = await response.json()
-            this.setState({ comments: [userComments] })
+            this.setState({
+                comments: [userComments],
+                isLoading: false,
+            })
 
         } catch (error) {
-            console.log(error)
-
+            console.log(13)
+            this.setState({
+                isLoading: false,
+                error: true,
+            })
         }
     }
 
@@ -54,13 +64,16 @@ class CommentArea extends Component {
     componentDidMount() {
         this.fetchComments()
     }
-
-
     render() {
-
         return (
 
-            <>
+            <> {this.state.isLoading && (<Spinner animation="border" role="status">
+                <span className="visually-hidden"></span>
+            </Spinner>)}
+
+                {this.state.error && (<ErrorComponent></ErrorComponent>)}
+
+
                 {this.state.comments.map((userComment) =>
                     userComment.map((singleComment) => (
                         <Card key={this.props.bookAsin} className="my-3">
@@ -78,7 +91,6 @@ class CommentArea extends Component {
                 <AddComment bookAsin={this.props.bookAsin}></AddComment>
             </>
         )
-
     }
 }
 
