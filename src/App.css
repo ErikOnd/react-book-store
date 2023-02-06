@@ -96,10 +96,14 @@ h3 {
 }
 
 .card-img {
-  height: 500px;
+  max-height: 320px;
 
 }
 
 .card-selected {
   background-color: rgb(0, 203, 0);
+}
+
+#card-title {
+  font-size: 1rem;
 }

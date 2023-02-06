@@ -38,9 +38,9 @@ class BookList extends Component {
                         <Dropdown.Item>Romance</Dropdown.Item>
                     </DropdownButton>
                 </InputGroup>
-                <Row xs={1} sm={2} md={3} className="g-4">
+                <Row sm={1} md={2} className="g-4">
                     {this.filteredBooks().map((book) => (
-                        <SingleBook book={book} key={book.asin}></SingleBook>
+                        <SingleBook book={book} key={book.asin} selectedBook={this.props.selectedBook} changeBook={this.props.changeBook}></SingleBook>
                     ))}
                 </Row>
             </div >
